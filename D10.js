@@ -4,7 +4,7 @@ Create a variable called test and assign a string value to it.*/
 
 console.log('\n------------------------ EXERCISE A ------------------------')
 
-let test = "Hello Epicode"
+let test = "Hello Epicode! Let's get started!"
 console.log(test)
 
 /* EXERCISE B
@@ -23,7 +23,7 @@ Create a variable called random and assign to it a random number between 0 and 2
 console.log("\n------------------------ EXERCISE C ------------------------");
 let random = Math.floor(Math.random() * 20); 
 
-console.log(random);
+console.log('random number between 0 and 20:',random);
 
 /* EXERCISE D
 
@@ -49,6 +49,7 @@ console.log("\n------------------------ EXERCISE E ------------------------");
 
 delete me.age;
 
+console.log('Deleting age property')
 console.log(me);
 
 /* EXERCISE F
@@ -60,6 +61,7 @@ console.log("\n------------------------ EXERCISE F ------------------------");
 
 me.skills = ['html', 'css', 'js']
 
+console.log('New array')
 console.log(me);
 
 /* EXERCISE G
@@ -71,6 +73,7 @@ console.log("\n------------------------ EXERCISE G ------------------------");
 
 const rem = me.skills.pop();
 
+console.log('Last skill removed')
 console.log(me);
 
 // JS Functions
@@ -86,7 +89,7 @@ function dice(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
  };
 
-console.log(dice(1,6));
+console.log('Random number:', dice(1,6));
 
 /* EXERCISE 2
 
@@ -95,7 +98,10 @@ Write a function called whoIsBigger which receives 2 numbers as parameters and r
 */
 console.log("\n------------------------ EXERCISE 2 ------------------------");
 
-console.log();
+function whoIsBigger(number1,number2){
+    return number1>number2 ? number1:number2;
+}
+console.log('The biggest number is:',whoIsBigger(651651,5046));
 
 /* EXERCISE 3
 
@@ -106,7 +112,10 @@ Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
 console.log("\n------------------------ EXERCISE 3 ------------------------");
 
-console.log();
+function splitMe(arr){
+    return arr.split(' ')
+}
+console.log(splitMe(test));
 
 /* EXERCISE 4
 
@@ -117,7 +126,18 @@ If the boolean value is true it should return the string without the first lette
 */
 console.log("\n------------------------ EXERCISE 4 ------------------------");
 
-console.log();
+function deleteOne(string,bn){
+    if (bn === true) {
+      let r = string;
+      return r.substring(1, r.length);
+    } else if (bn === false) {
+      let r = string;
+      return r.substring(0, r.length - 1);
+    }
+}
+
+console.log(deleteOne('String',false));
+
 
 /* EXERCISE 5
 
@@ -126,18 +146,55 @@ Write a function called onlyLetters which receives a string as a parameter and r
 Ex.: onlyLetters("I have 4 dogs") => returns "I have dogs"
 
 */
+console.log("\n------------------------ EXERCISE 5 ------------------------");
+
+function onlyLetters(str) {
+  let receive = str;
+  return receive.replace(/[0-9]/g,"");
+}
+
+console.log(onlyLetters("My mom has 7 dogs, 1 turtle, 2 rats, 3 hens and 100 of plants"));
+
 
 /* EXERCISE 6
 
 Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.
 
 */
+console.log("\n------------------------ EXERCISE 6 ------------------------");
+
+function isThisAnEmail(email) {
+  let val = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  if (val.test(email)) {
+    return "Valid Email.";
+  } else {
+    return "Unvalid Email .";
+  }
+}
+
+console.log(isThisAnEmail("juanchonhotmail.com"));
 
 /* EXERCISE 7
 
 Write a function called whatDayIsIt that should return the current day of the week.
 
 */
+console.log("\n------------------------ EXERCISE 7 ------------------------");
+
+const day = new Array(7);
+day[1] = 'Sunday' ;
+day[2] = 'Monday';
+day[3] = 'Tuesday';
+day[4] = 'Wednesday';
+day[5] = 'Thursday';
+day[6] = 'Friday';
+day[7] = 'Saturday';
+
+function whatDayIsIt(x){
+    return x>1 && x<7 ? day[x] : "We don't have more than 7 days per week";
+}
+
+console.log(whatDayIsIt(1));
 
 /* EXERCISE 8
 
@@ -165,11 +222,36 @@ Write a function called howManyDays which receives a date as a parameter and ret
 
 */
 
+console.log("\n------------------------ EXERCISE 9 ------------------------");
+
+function howManyDays(date) {
+  let split = date.split("/");
+  let day = split[0];
+  let month = split[1];
+  let year = split[2];
+
+  let fixDate = new Date(month + "/" + day + "/" + year);
+  let today = new Date();
+
+  let diff = today.getTime() - fixDate.getTime();
+
+  let daydiff = diff / (1000 * 60 * 60 * 24);
+
+  return Math.floor(daydiff);
+}
+
+console.log(howManyDays("05/08/1995"));
+
+
 /* EXERCISE 10
 
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
 
 */
+
+console.log("\n------------------------ EXERCISE 10 ------------------------");
+
+console.log();
 
 // JS Arrays & Objects
 
@@ -183,11 +265,19 @@ and returns the given object after deleting its property named as the given stri
 
 */
 
+console.log("\n------------------------ EXERCISE 11 ------------------------");
+
+console.log();
+
 /* EXERCISE 12
 
 Write a function called oldestMovie which finds the oldest movie in the provided movies array.
 
 */
+
+console.log("\n------------------------ EXERCISE 12 ------------------------");
+
+console.log();
 
 /* EXERCISE 13
 
